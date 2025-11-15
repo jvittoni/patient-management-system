@@ -1,5 +1,6 @@
 package com.jvittoni.patientservice.service;
 
+import com.jvittoni.patientservice.dto.PatientRequestDTO;
 import com.jvittoni.patientservice.dto.PatientResponseDTO;
 import com.jvittoni.patientservice.mapper.PatientMapper;
 import com.jvittoni.patientservice.model.Patient;
@@ -19,5 +20,10 @@ public class PatientService {
     public List<PatientResponseDTO> getPatients() {
         List<Patient> patients = patientRepository.findAll();
         return patients.stream().map(PatientMapper::toDTO).toList();
+    }
+
+    public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO) {
+        Patient newPatient = patientRepository.save(PatientMapper.toModel(patientRequestDTO));
+        return PatientMapper.toDTO(newPatient);
     }
 }
