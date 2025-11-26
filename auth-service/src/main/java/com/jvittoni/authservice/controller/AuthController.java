@@ -35,7 +35,7 @@ public class AuthController {
 
     @Operation(summary = "Validate Token")
     @GetMapping("/validate")
-    public ResponseEntity<Void> validateoken(@RequestHeader("Authorization") String authHeader) {
+    public ResponseEntity<Void> validatetoken(@RequestHeader("Authorization") String authHeader) {
 
         // Authorization: Bearer <token>
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
