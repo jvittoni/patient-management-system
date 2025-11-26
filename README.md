@@ -48,6 +48,8 @@ This repository contains a set of Spring Boot–based microservices that collect
 ### API Documentation
 - Springdoc OpenAPI (Swagger UI)
 
+---
+
 # Integration Testing Module
 
 This project includes a dedicated **integration-tests** module designed to verify the full end-to-end behavior of the system through the **API Gateway**.  
